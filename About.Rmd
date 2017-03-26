@@ -1,0 +1,56 @@
+---
+title: "Summary"
+author: "Masha Chernyak"
+date: "March 24, 2017"
+#output: ioslides_presentation
+output: html_document
+---
+
+```{r setup, include=FALSE}
+```
+
+## Overview
+
+The main goal of this capstone project is to build a shiny application that is able to predict the next word. The user begins submitting text without punctuation in the supplied input box. Once the input is provided, the method of prediction must be selected. 
+
+The Simple method will provide result quickly. 
+
+Kneser-NeyMethod would require time to compile. 
+
+All text data that is used to create a frequency dictionary and thus to predict the next words comes from a corpus called HC Corpora.
+
+All text mining and natural language processing was done with the usage of a variety of well-known R packages.
+
+
+```{r cars}
+```
+
+
+## Data Approach
+
+After creating a data sample from the HC Corpora data, this sample was cleaned by conversion to lowercase, removing punctuation, links, white space, numbers and all kinds of special characters. This data sample was then tokenized into so-called n-grams.
+
+In the fields of computational linguistics and probability, an n-gram is a contiguous sequence of n items from a given sequence of text or speech. Those aggregated bi-,tri- and quadgram term frequency matrices have been transferred into frequency dictionaries.
+
+The resulting data frames are used to predict the next word in connection with the text input by a user of the described application and the frequencies of the underlying n-grams table.
+
+
+```{r pressure, echo=FALSE}
+```
+
+
+## Methodology
+
+Simple method returns the most frequent word that follows input provided.
+
+Kneser-Ney method uses Kneser-Ney smoothing to identify the most likely word prediction. You can read more on this method here: https://en.wikipedia.org/wiki/Kneser%E2%80%93Ney_smoothing
+```{r}
+
+```
+## Model Limitation
+
+Model only uses frequently occuring words within the source material. 
+
+Model is only able to predict proper English words. Profanity, symbols, or unrecognizable words will not result in a prediction of any value.
+
+Finally, the model is only as good as its source material. Extended data would serve to improve its accuracy.
